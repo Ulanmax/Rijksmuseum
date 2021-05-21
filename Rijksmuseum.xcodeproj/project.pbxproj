@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		00809C5926578EDD00CD3387 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00809C5726578EDD00CD3387 /* LaunchScreen.storyboard */; };
 		00809C6426578EDE00CD3387 /* RijksmuseumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00809C6326578EDE00CD3387 /* RijksmuseumTests.swift */; };
 		00809C6F26578EDE00CD3387 /* RijksmuseumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00809C6E26578EDE00CD3387 /* RijksmuseumUITests.swift */; };
+		5D45DDF4F4C0EE76F9DD719B /* Pods_RijksmuseumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB8B4FBE8C8E0925189A7A /* Pods_RijksmuseumTests.framework */; };
+		67C01DFD4A14A22F0996E94E /* Pods_Rijksmuseum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C76485756E49D7F543D9D3E /* Pods_Rijksmuseum.framework */; };
+		E5EAA08FFF98E9BFDCB13EDA /* Pods_Rijksmuseum_RijksmuseumUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE88550A7D8B5F3FB9F21AB1 /* Pods_Rijksmuseum_RijksmuseumUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,15 @@
 		00809C6A26578EDE00CD3387 /* RijksmuseumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RijksmuseumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00809C6E26578EDE00CD3387 /* RijksmuseumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksmuseumUITests.swift; sourceTree = "<group>"; };
 		00809C7026578EDE00CD3387 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08FB8B4FBE8C8E0925189A7A /* Pods_RijksmuseumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RijksmuseumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C76485756E49D7F543D9D3E /* Pods_Rijksmuseum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rijksmuseum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6798C8690F0475F06892F47 /* Pods-Rijksmuseum-RijksmuseumUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rijksmuseum-RijksmuseumUITests.debug.xcconfig"; path = "Target Support Files/Pods-Rijksmuseum-RijksmuseumUITests/Pods-Rijksmuseum-RijksmuseumUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0346B27CA8C8115AE5E06B9 /* Pods-RijksmuseumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RijksmuseumTests.release.xcconfig"; path = "Target Support Files/Pods-RijksmuseumTests/Pods-RijksmuseumTests.release.xcconfig"; sourceTree = "<group>"; };
+		C14A1961759721595D80E2B6 /* Pods-RijksmuseumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RijksmuseumTests.debug.xcconfig"; path = "Target Support Files/Pods-RijksmuseumTests/Pods-RijksmuseumTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C1847AE93EB8248929D027D4 /* Pods-Rijksmuseum-RijksmuseumUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rijksmuseum-RijksmuseumUITests.release.xcconfig"; path = "Target Support Files/Pods-Rijksmuseum-RijksmuseumUITests/Pods-Rijksmuseum-RijksmuseumUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D1CCE817D9612A94AF881F35 /* Pods-Rijksmuseum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rijksmuseum.debug.xcconfig"; path = "Target Support Files/Pods-Rijksmuseum/Pods-Rijksmuseum.debug.xcconfig"; sourceTree = "<group>"; };
+		D45D0C02E772871507C4467A /* Pods-Rijksmuseum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rijksmuseum.release.xcconfig"; path = "Target Support Files/Pods-Rijksmuseum/Pods-Rijksmuseum.release.xcconfig"; sourceTree = "<group>"; };
+		FE88550A7D8B5F3FB9F21AB1 /* Pods_Rijksmuseum_RijksmuseumUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rijksmuseum_RijksmuseumUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67C01DFD4A14A22F0996E94E /* Pods_Rijksmuseum.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D45DDF4F4C0EE76F9DD719B /* Pods_RijksmuseumTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5EAA08FFF98E9BFDCB13EDA /* Pods_Rijksmuseum_RijksmuseumUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				00809C6226578EDE00CD3387 /* RijksmuseumTests */,
 				00809C6D26578EDE00CD3387 /* RijksmuseumUITests */,
 				00809C4A26578ED600CD3387 /* Products */,
+				17D4A5AA085E448537698854 /* Pods */,
+				B5688DAC48971A7E0082E895 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,29 @@
 			path = RijksmuseumUITests;
 			sourceTree = "<group>";
 		};
+		17D4A5AA085E448537698854 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1CCE817D9612A94AF881F35 /* Pods-Rijksmuseum.debug.xcconfig */,
+				D45D0C02E772871507C4467A /* Pods-Rijksmuseum.release.xcconfig */,
+				B6798C8690F0475F06892F47 /* Pods-Rijksmuseum-RijksmuseumUITests.debug.xcconfig */,
+				C1847AE93EB8248929D027D4 /* Pods-Rijksmuseum-RijksmuseumUITests.release.xcconfig */,
+				C14A1961759721595D80E2B6 /* Pods-RijksmuseumTests.debug.xcconfig */,
+				C0346B27CA8C8115AE5E06B9 /* Pods-RijksmuseumTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B5688DAC48971A7E0082E895 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C76485756E49D7F543D9D3E /* Pods_Rijksmuseum.framework */,
+				FE88550A7D8B5F3FB9F21AB1 /* Pods_Rijksmuseum_RijksmuseumUITests.framework */,
+				08FB8B4FBE8C8E0925189A7A /* Pods_RijksmuseumTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00809C7326578EDE00CD3387 /* Build configuration list for PBXNativeTarget "Rijksmuseum" */;
 			buildPhases = (
+				86E282D452F08607C753E29A /* [CP] Check Pods Manifest.lock */,
 				00809C4526578ED600CD3387 /* Sources */,
 				00809C4626578ED600CD3387 /* Frameworks */,
 				00809C4726578ED600CD3387 /* Resources */,
+				9F1B0FC6C118671BF0BD5717 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00809C7626578EDE00CD3387 /* Build configuration list for PBXNativeTarget "RijksmuseumTests" */;
 			buildPhases = (
+				6879EB7DA0FCE59A04D8AB81 /* [CP] Check Pods Manifest.lock */,
 				00809C5B26578EDE00CD3387 /* Sources */,
 				00809C5C26578EDE00CD3387 /* Frameworks */,
 				00809C5D26578EDE00CD3387 /* Resources */,
+				40FF68AD0547FE9043EA7AA1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00809C7926578EDE00CD3387 /* Build configuration list for PBXNativeTarget "RijksmuseumUITests" */;
 			buildPhases = (
+				0DDB47ABCF3857D95A06F5AB /* [CP] Check Pods Manifest.lock */,
 				00809C6626578EDE00CD3387 /* Sources */,
 				00809C6726578EDE00CD3387 /* Frameworks */,
 				00809C6826578EDE00CD3387 /* Resources */,
+				024BB2139BAA8EF063BC69EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,126 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		024BB2139BAA8EF063BC69EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rijksmuseum-RijksmuseumUITests/Pods-Rijksmuseum-RijksmuseumUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rijksmuseum-RijksmuseumUITests/Pods-Rijksmuseum-RijksmuseumUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rijksmuseum-RijksmuseumUITests/Pods-Rijksmuseum-RijksmuseumUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0DDB47ABCF3857D95A06F5AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rijksmuseum-RijksmuseumUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40FF68AD0547FE9043EA7AA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RijksmuseumTests/Pods-RijksmuseumTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RijksmuseumTests/Pods-RijksmuseumTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RijksmuseumTests/Pods-RijksmuseumTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6879EB7DA0FCE59A04D8AB81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RijksmuseumTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86E282D452F08607C753E29A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rijksmuseum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F1B0FC6C118671BF0BD5717 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rijksmuseum/Pods-Rijksmuseum-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rijksmuseum/Pods-Rijksmuseum-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rijksmuseum/Pods-Rijksmuseum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		00809C4526578ED600CD3387 /* Sources */ = {
@@ -433,6 +599,7 @@
 		};
 		00809C7426578EDE00CD3387 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1CCE817D9612A94AF881F35 /* Pods-Rijksmuseum.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -446,12 +613,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.maksimniagolov.Rijksmuseum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		00809C7526578EDE00CD3387 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D45D0C02E772871507C4467A /* Pods-Rijksmuseum.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -465,12 +633,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.maksimniagolov.Rijksmuseum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		00809C7726578EDE00CD3387 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C14A1961759721595D80E2B6 /* Pods-RijksmuseumTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +662,7 @@
 		};
 		00809C7826578EDE00CD3387 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0346B27CA8C8115AE5E06B9 /* Pods-RijksmuseumTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +685,7 @@
 		};
 		00809C7A26578EDE00CD3387 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6798C8690F0475F06892F47 /* Pods-Rijksmuseum-RijksmuseumUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +706,7 @@
 		};
 		00809C7B26578EDE00CD3387 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1847AE93EB8248929D027D4 /* Pods-Rijksmuseum-RijksmuseumUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
