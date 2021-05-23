@@ -25,7 +25,8 @@ target 'Rijksmuseum' do
   rx_swift
   cocoaLumberjack
   pod 'PKHUD', '~> 5.0'
-  pod 'Nuke'
+  pod 'RxNuke'
+  pod 'SnapKit', '~> 5.0.0'
 
   target 'RijksmuseumTests' do
     inherit! :search_paths

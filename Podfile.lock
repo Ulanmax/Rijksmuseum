@@ -20,6 +20,9 @@ PODS:
     - Differentiator (~> 4.0)
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
+  - RxNuke (1.0.1):
+    - Nuke (~> 9.0)
+    - RxSwift (~> 5.1.0)
   - RxOptional (4.1.0):
     - RxCocoa (~> 5)
     - RxSwift (~> 5)
@@ -28,19 +31,21 @@ PODS:
   - RxSwift (5.1.2)
   - RxTest (5.1.2):
     - RxSwift (~> 5)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
   - CocoaLumberjack/Swift
-  - Nuke
   - PKHUD (~> 5.0)
   - RxAlamofire
   - RxBlocking
   - RxCocoa
   - RxDataSources
+  - RxNuke
   - RxOptional
   - RxSwift (~> 5.1.0)
   - RxTest
+  - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
@@ -53,10 +58,12 @@ SPEC REPOS:
     - RxBlocking
     - RxCocoa
     - RxDataSources
+    - RxNuke
     - RxOptional
     - RxRelay
     - RxSwift
     - RxTest
+    - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
@@ -68,11 +75,13 @@ SPEC CHECKSUMS:
   RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxNuke: 10314eff18b5e7cf961298b265507deafcdcdef3
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
   RxTest: 274549b747dca56f47c52c8991ec5cf797ecfe40
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: b4ee5900d425c1a3026a67db4498e3a7a4d3140e
+PODFILE CHECKSUM: 3b2648c31731ff551651f558d6b8a94574b683c8
 
 COCOAPODS: 1.10.1

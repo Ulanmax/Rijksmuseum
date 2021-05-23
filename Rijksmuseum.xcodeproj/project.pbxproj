@@ -32,10 +32,10 @@
 		00809CF02657ABB200CD3387 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00809CEF2657ABB200CD3387 /* OverviewViewModel.swift */; };
 		00809CF62657AC2900CD3387 /* ArtObjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00809CF52657AC2900CD3387 /* ArtObjectCell.swift */; };
 		00809CFE2657AC3600CD3387 /* ArtObjectCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00809CFD2657AC3600CD3387 /* ArtObjectCellViewModel.swift */; };
-		00809D092657B17200CD3387 /* ArtObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00809D082657B17200CD3387 /* ArtObjectModel.swift */; };
 		00809D0E2657FB1800CD3387 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00809D0D2657FB1800CD3387 /* ImageModel.swift */; };
-		00809D132658043000CD3387 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00809D122658043000CD3387 /* Overview.storyboard */; };
 		00809D1E2659256F00CD3387 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00809D1D2659256E00CD3387 /* CollectionModel.swift */; };
+		00809D3F265A508000CD3387 /* ArtObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00809D3E265A508000CD3387 /* ArtObjectModel.swift */; };
+		00809D73265AABE200CD3387 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00809D72265AABE200CD3387 /* HeaderCell.swift */; };
 		5D45DDF4F4C0EE76F9DD719B /* Pods_RijksmuseumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB8B4FBE8C8E0925189A7A /* Pods_RijksmuseumTests.framework */; };
 		67C01DFD4A14A22F0996E94E /* Pods_Rijksmuseum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C76485756E49D7F543D9D3E /* Pods_Rijksmuseum.framework */; };
 		E5EAA08FFF98E9BFDCB13EDA /* Pods_Rijksmuseum_RijksmuseumUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE88550A7D8B5F3FB9F21AB1 /* Pods_Rijksmuseum_RijksmuseumUITests.framework */; };
@@ -90,10 +90,10 @@
 		00809CEF2657ABB200CD3387 /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
 		00809CF52657AC2900CD3387 /* ArtObjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObjectCell.swift; sourceTree = "<group>"; };
 		00809CFD2657AC3600CD3387 /* ArtObjectCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObjectCellViewModel.swift; sourceTree = "<group>"; };
-		00809D082657B17200CD3387 /* ArtObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArtObjectModel.swift; path = ../../../../../ArtObjectModel.swift; sourceTree = "<group>"; };
 		00809D0D2657FB1800CD3387 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
-		00809D122658043000CD3387 /* Overview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overview.storyboard; sourceTree = "<group>"; };
 		00809D1D2659256E00CD3387 /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
+		00809D3E265A508000CD3387 /* ArtObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtObjectModel.swift; sourceTree = "<group>"; };
+		00809D72265AABE200CD3387 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		08FB8B4FBE8C8E0925189A7A /* Pods_RijksmuseumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RijksmuseumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C76485756E49D7F543D9D3E /* Pods_Rijksmuseum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rijksmuseum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6798C8690F0475F06892F47 /* Pods-Rijksmuseum-RijksmuseumUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rijksmuseum-RijksmuseumUITests.debug.xcconfig"; path = "Target Support Files/Pods-Rijksmuseum-RijksmuseumUITests/Pods-Rijksmuseum-RijksmuseumUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -218,8 +218,8 @@
 		00809CCA2657A79400CD3387 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				00809D3E265A508000CD3387 /* ArtObjectModel.swift */,
 				00809D1D2659256E00CD3387 /* CollectionModel.swift */,
-				00809D082657B17200CD3387 /* ArtObjectModel.swift */,
 				00809D0D2657FB1800CD3387 /* ImageModel.swift */,
 			);
 			path = Models;
@@ -247,7 +247,6 @@
 		00809CE02657AB6100CD3387 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
-				00809D122658043000CD3387 /* Overview.storyboard */,
 				00809CE22657AB9300CD3387 /* OverviewNavigator.swift */,
 				00809CEA2657ABA300CD3387 /* OverviewViewController.swift */,
 				00809CEF2657ABB200CD3387 /* OverviewViewModel.swift */,
@@ -268,6 +267,7 @@
 			children = (
 				00809CF52657AC2900CD3387 /* ArtObjectCell.swift */,
 				00809CFD2657AC3600CD3387 /* ArtObjectCellViewModel.swift */,
+				00809D72265AABE200CD3387 /* HeaderCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -406,7 +406,6 @@
 			files = (
 				00809C5926578EDD00CD3387 /* LaunchScreen.storyboard in Resources */,
 				00809C5626578EDD00CD3387 /* Assets.xcassets in Resources */,
-				00809D132658043000CD3387 /* Overview.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,14 +557,15 @@
 				00809CE32657AB9300CD3387 /* OverviewNavigator.swift in Sources */,
 				00809D1E2659256F00CD3387 /* CollectionModel.swift in Sources */,
 				00809CBF2657A73500CD3387 /* Reusable.swift in Sources */,
-				00809D092657B17200CD3387 /* ArtObjectModel.swift in Sources */,
 				00809CC02657A73500CD3387 /* Log.swift in Sources */,
 				00809CAF2657A6EE00CD3387 /* Application.swift in Sources */,
 				00809CD82657A8E100CD3387 /* NetworkProvider.swift in Sources */,
 				00809CEB2657ABA300CD3387 /* OverviewViewController.swift in Sources */,
+				00809D73265AABE200CD3387 /* HeaderCell.swift in Sources */,
 				00809CBE2657A73500CD3387 /* ActivityIndicator.swift in Sources */,
 				00809D0E2657FB1800CD3387 /* ImageModel.swift in Sources */,
 				00809CC42657A73500CD3387 /* Array+Ext.swift in Sources */,
+				00809D3F265A508000CD3387 /* ArtObjectModel.swift in Sources */,
 				00809C4D26578ED600CD3387 /* AppDelegate.swift in Sources */,
 				00809CD92657A8E100CD3387 /* Network.swift in Sources */,
 				00809CF02657ABB200CD3387 /* OverviewViewModel.swift in Sources */,

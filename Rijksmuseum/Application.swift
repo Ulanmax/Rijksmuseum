@@ -25,16 +25,13 @@ final class Application {
   }
   
   func openOverview() {
-    let storyboard = UIStoryboard(name: "Overview", bundle: nil)
-    let navigationController = UINavigationController()
-    let mainNavigator = OverviewNavigator(network: networkUseCaseProvider,
-                                                     navigationController: navigationController,
-                                                     storyBoard: storyboard)
-    let vc = UIViewController()
+    let vc = OverviewViewController()
+    let navigationController = UINavigationController(rootViewController: vc)
+    let overviewNavigator = OverviewNavigator(network: networkUseCaseProvider,
+                                                     navigationController: navigationController)
     
-    vc.view.backgroundColor = .blue
-    
-    mainNavigator.toOverview()
+    vc.viewModel = OverviewViewModel(useCase: networkUseCaseProvider.makeCollectionNetwork(),
+                                    navigator: overviewNavigator)
 
     window?.rootViewController = navigationController
   }
