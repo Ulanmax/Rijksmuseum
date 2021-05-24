@@ -8,7 +8,7 @@
 import RxSwift
 
 protocol CollectionNetworkProtocol : class {
-    func searchWords(page: Int, pageSize: Int) -> Observable<[ArtObjectModel]>
+    func getArts(page: Int, pageSize: Int) -> Observable<[ArtObjectModel]>
 }
 
 public final class CollectionNetwork: CollectionNetworkProtocol {
@@ -20,7 +20,7 @@ public final class CollectionNetwork: CollectionNetworkProtocol {
     self.network = network
   }
 
-  public func searchWords(page: Int, pageSize: Int) -> Observable<[ArtObjectModel]> {
+  public func getArts(page: Int, pageSize: Int) -> Observable<[ArtObjectModel]> {
     let params = ["p": page, "ps": pageSize] as [String : Any]
     return network.getItem(path, params: params).map({ result -> [ArtObjectModel] in
       return result.artObjects

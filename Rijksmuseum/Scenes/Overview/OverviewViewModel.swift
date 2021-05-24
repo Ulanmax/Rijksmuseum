@@ -14,7 +14,10 @@ enum SectionItem {
   case artObjectSectionItem(art: ArtObjectCellViewModel)
 }
 
-enum CollectionSectionModel {
+enum CollectionSectionModel: Equatable {
+  static func == (lhs: CollectionSectionModel, rhs: CollectionSectionModel) -> Bool {
+    lhs.title == rhs.title
+  }
   case imageProvidableSection(title: String, items: [SectionItem])
 }
 
@@ -80,7 +83,7 @@ final class OverviewViewModel: ViewModelType {
     let sections = input.nextPageTrigger
       .flatMapLatest { _ -> SharedSequence<DriverSharingStrategy, [ArtObjectModel]> in
         self.page += 1
-        return self.useCase.searchWords(page: self.page, pageSize: self.pageSize)
+        return self.useCase.getArts(page: self.page, pageSize: self.pageSize)
           .trackActivity(activityIndicator)
           .trackError(errorTracker)
           .asDriverOnErrorJustComplete()
