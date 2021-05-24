@@ -17,7 +17,7 @@ class HeaderCell: UICollectionViewCell {
     return label
   }()
 
-  func setup() {
+  func setup(_ section: Int) {
     layer.cornerRadius = 16
     layer.masksToBounds = true
 
@@ -25,7 +25,7 @@ class HeaderCell: UICollectionViewCell {
 
     setupLayouts()
 
-    self.titleLabel.text = "Collection"
+    self.titleLabel.text = "Collection \(section)"
   }
 
   private func setupLayouts() {

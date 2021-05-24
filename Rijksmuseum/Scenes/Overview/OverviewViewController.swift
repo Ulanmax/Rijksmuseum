@@ -101,7 +101,7 @@ class OverviewViewController: UIViewController {
     
     dataSource.configureSupplementaryView = {(dataSource, collectionView, kind, indexPath) -> UICollectionReusableView in
       let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Utilities.classNameAsString(obj: HeaderCell.self), for: indexPath) as! HeaderCell
-      header.setup()
+      header.setup(indexPath.section)
       return header
     }
     

@@ -63,6 +63,8 @@ final class OverviewViewModel: ViewModelType {
   private let pageSize = 20
   private var page = 0
   
+  private var collections: [CollectionSectionModel] = []
+  
   init(useCase: CollectionNetworkProtocol, navigator: OverviewNavigatorProtocol) {
     self.useCase = useCase
     self.navigator = navigator
@@ -82,12 +84,12 @@ final class OverviewViewModel: ViewModelType {
           .trackActivity(activityIndicator)
           .trackError(errorTracker)
           .asDriverOnErrorJustComplete()
-      }.map { arts -> [CollectionSectionModel] in
+      }.map { [self] arts -> [CollectionSectionModel] in
         let sectionItems = arts.map { SectionItem.artObjectSectionItem(art: ArtObjectCellViewModel(with: $0)) }
-        return [
-          .imageProvidableSection(title: "Collection of art objects",
-                                  items: sectionItems)
-        ]
+        collections.append(CollectionSectionModel.imageProvidableSection(title: "Collection of art objects",
+                                  items: sectionItems))
+        
+        return collections
       }
       
     let selectedArt = input.selection.withLatestFrom(sections) { (indexPath, sections) -> SectionItem in

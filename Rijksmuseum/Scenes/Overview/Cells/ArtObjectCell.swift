@@ -29,6 +29,8 @@ class ArtObjectCell: UICollectionViewCell {
 
   private let imageView: UIImageView = {
     let imageView = UIImageView()
+    imageView.contentMode = .scaleAspectFill
+    imageView.backgroundColor = .gray
     return imageView
   }()
 
@@ -50,6 +52,8 @@ class ArtObjectCell: UICollectionViewCell {
       options.pipeline = self.pipeline
       
       let isBusy = ActivityIndicator()
+      
+      self.imageView.image = nil
       
       self.pipeline.rx.loadImage(with: url)
         .trackActivity(isBusy)
