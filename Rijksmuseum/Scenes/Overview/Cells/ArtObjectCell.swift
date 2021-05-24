@@ -76,7 +76,7 @@ class ArtObjectCell: UICollectionViewCell {
   }
   
   func makeImageLoadingOptions() -> ImageLoadingOptions {
-      return ImageLoadingOptions(transition: .fadeIn(duration: 0.25))
+    return ImageLoadingOptions(placeholder:UIImage(named: "photo"), transition: .fadeIn(duration: 0.25))
   }
   
   override func prepareForReuse() {

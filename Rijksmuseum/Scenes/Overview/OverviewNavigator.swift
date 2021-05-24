@@ -31,12 +31,11 @@ class OverviewNavigator: OverviewNavigatorProtocol {
   }
 
   func toArtDetails(_ art: ArtObjectModel) {
-//    let storyboard = UIStoryboard(name: "Meaning", bundle: nil)
-//    let navigator = MeaningNavigator(network: network, navigationController: navigationController, storyBoard: storyboard)
-//    let vc = storyboard.instantiateViewController(ofType: MeaningViewController.self)
-//    let viewModel = MeaningViewModel(useCase: network.makeVocabularyNetwork(), navigator: navigator, word: word, meaning: meaning)
-//    vc.viewModel = viewModel
-//    navigationController.pushViewController(vc, animated: true)
+    let navigator = ArtDetailsNavigator(network: network, navigationController: navigationController)
+    let vc = ArtDetailsViewController()
+    let viewModel = ArtDetailsViewModel(useCase: network.makeCollectionNetwork(), navigator: navigator, art: art)
+    vc.viewModel = viewModel
+    navigationController.pushViewController(vc, animated: true)
   }
     
 }
