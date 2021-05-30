@@ -14,11 +14,13 @@ import RxBlocking
 class RijksmuseumTests: XCTestCase {
     
   var viewModel : OverviewViewModel!
+  var detailsViewModel : ArtDetailsViewModel!
   var scheduler: TestScheduler!
   var disposeBag: DisposeBag!
 
   fileprivate var service : MockCollectionNetwork!
   fileprivate var navigator : MockOverviewNavigator!
+  fileprivate var detailsNavigator : MockArtDetailsNavigator!
 
   override func setUp() {
     super.setUp()
@@ -26,6 +28,7 @@ class RijksmuseumTests: XCTestCase {
     self.disposeBag = DisposeBag()
     self.service = MockCollectionNetwork()
     self.navigator = MockOverviewNavigator()
+    self.detailsNavigator = MockArtDetailsNavigator()
     self.viewModel = OverviewViewModel(useCase: self.service, navigator: self.navigator)
   }
 
@@ -46,11 +49,9 @@ class RijksmuseumTests: XCTestCase {
     
     service.artObject = artObject
     
-    let trigger = scheduler.createHotObservable([Recorded.next(10, ())]).asDriverOnErrorJustComplete()
     let contentOffset = scheduler.createHotObservable([Recorded.next(10, CGPoint())]).asDriverOnErrorJustComplete()
     
     let input = OverviewViewModel.Input(
-        trigger: trigger,
         nextPageTrigger: contentOffset,
         selection: .empty()
     )
@@ -64,8 +65,6 @@ class RijksmuseumTests: XCTestCase {
 
     scheduler.start()
     
-//    let result = [CollectionSectionModel(with: wordModel.meanings.first!, word: wordModel.text)]
-    
     let sectionItems = [SectionItem.artObjectSectionItem(art: ArtObjectCellViewModel(with: artObject))]
     let result = [
       CollectionSectionModel.imageProvidableSection(
@@ -75,6 +74,36 @@ class RijksmuseumTests: XCTestCase {
     ]
 
     XCTAssertEqual(sections.events, [.next(10, result)])
+  }
+
+  func testArtDetails() {
+
+    let titleObserver = scheduler.createObserver(String.self)
+    let messageObserver = scheduler.createObserver(String.self)
+    
+    let imageModel = ImageModel(guid: "", offsetPercentageX: 0, offsetPercentageY: 0, width: 0, height: 0, url: "ttps://lh3.googleusercontent.com/J-mxAE7CPu-DXIOx4QKBtb0GC4ud37da1QK7CzbTIDswmvZHXhLm4Tv2-1H3iBXJWAW_bHm7dMl3j5wv_XiWAg55VOM=s0")
+
+    let artObject = ArtObjectModel(id: "", title: "art 1", principalOrFirstMaker: "principal 1", longTitle: "art 1 details", webImage: imageModel, headerImage: imageModel)
+    
+    self.detailsViewModel = ArtDetailsViewModel(useCase: self.service, navigator: self.detailsNavigator, art: artObject)
+    
+    let input = ArtDetailsViewModel.Input()
+    
+    let output = detailsViewModel.transform(input: input)
+
+    // bind the result
+    output.title
+        .drive(titleObserver)
+        .disposed(by: disposeBag)
+    
+    output.message
+        .drive(messageObserver)
+        .disposed(by: disposeBag)
+
+    scheduler.start()
+
+    XCTAssertEqual(titleObserver.events, [.next(0, artObject.title), .completed(0)])
+    XCTAssertEqual(messageObserver.events, [.next(0, artObject.longTitle), .completed(0)])
   }
 }
 
@@ -89,10 +118,13 @@ fileprivate class MockCollectionNetwork: CollectionNetworkProtocol {
 
 fileprivate class MockOverviewNavigator: OverviewNavigatorProtocol {
   func toOverview() {
-    
   }
   
   func toArtDetails(_ art: ArtObjectModel) {
-    
+  }
+}
+
+fileprivate class MockArtDetailsNavigator: ArtDetailsNavigatorProtocol {
+  func toOverview() {
   }
 }

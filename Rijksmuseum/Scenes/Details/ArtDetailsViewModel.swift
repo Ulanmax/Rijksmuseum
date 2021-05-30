@@ -45,7 +45,7 @@ final class ArtDetailsViewModel: ViewModelType {
     let fetching = activityIndicator.asDriver()
     let errors = errorTracker.asDriver()
     
-    let artObserver = Driver.just(self.art).startWith(self.art)
+    let artObserver = Driver.just(self.art)
       
     let title = artObserver.map {$0.title}
     
