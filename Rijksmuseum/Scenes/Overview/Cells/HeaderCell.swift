@@ -16,15 +16,29 @@ class HeaderCell: UICollectionViewCell {
     label.numberOfLines = 2
     return label
   }()
-
-  func setup(_ section: Int) {
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    prepare()
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  func prepare() {
+    addContentViews()
+    setupLayouts()
+  }
+  
+  func addContentViews(){
     layer.cornerRadius = 16
     layer.masksToBounds = true
 
     addSubview(titleLabel)
+  }
 
-    setupLayouts()
-
+  func setup(_ section: Int) {
     self.titleLabel.text = "Collection \(section)"
   }
 

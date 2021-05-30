@@ -50,7 +50,6 @@ extension CollectionSectionModel {
 
 final class OverviewViewModel: ViewModelType {
   struct Input {
-    let trigger: Driver<Void>
     let nextPageTrigger: Driver<CGPoint>
     let selection: Driver<IndexPath>
   }

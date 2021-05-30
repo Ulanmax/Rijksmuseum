@@ -59,6 +59,7 @@ class OverviewViewController: UIViewController {
     super.viewDidLoad()
 
     setupUI()
+    makeSubviewsLayout()
     setupBindings()
   }
   
@@ -70,7 +71,9 @@ class OverviewViewController: UIViewController {
     title = "Rijksmuseum"
     view.backgroundColor = .white
     view.addSubview(imageListCollectionView)
-
+  }
+  
+  private func makeSubviewsLayout() {
     imageListCollectionView.snp.makeConstraints({
       $0.top.trailing.equalToSuperview()
       $0.leading.trailing.bottom.equalToSuperview()
@@ -80,22 +83,17 @@ class OverviewViewController: UIViewController {
   private func setupBindings() {
     
     guard let viewModel = self.viewModel else {
-        return
+      return
     }
     
-    let viewDidAppear = rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))
-    .mapToVoid()
-    .asDriverOnErrorJustComplete()
-    
     let contentOffset = imageListCollectionView.rx.contentOffset.asDriver()
-        .filter({ (value) -> Bool in
-            return self.imageListCollectionView.contentOffset.y + self.imageListCollectionView.frame.size.height + 20.0 > self.imageListCollectionView.contentSize.height
-        })
+      .filter({ (value) -> Bool in
+      return self.imageListCollectionView.contentOffset.y + self.imageListCollectionView.frame.size.height + 20.0 > self.imageListCollectionView.contentSize.height
+    })
 
     let input = OverviewViewModel.Input(
-        trigger: viewDidAppear,
-        nextPageTrigger: contentOffset,
-        selection: imageListCollectionView.rx.itemSelected.asDriver()
+      nextPageTrigger: contentOffset,
+      selection: imageListCollectionView.rx.itemSelected.asDriver()
     )
     let output = viewModel.transform(input: input)
     
@@ -110,8 +108,8 @@ class OverviewViewController: UIViewController {
     .disposed(by: self.disposeBag)
 
     [
-        output.error.drive(errorBinding),
-        output.selectedArt.drive()
+      output.error.drive(errorBinding),
+      output.selectedArt.drive()
     ]
     .forEach({$0.disposed(by: disposeBag)})
   }

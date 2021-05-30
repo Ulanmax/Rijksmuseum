@@ -26,15 +26,15 @@ public enum APIError: Error {
   case mailExist
 
   static func checkErrorCode(_ errorCode: Int) -> APIError {
-      switch errorCode {
-      case 401:
-          return .invalidCredentials
-      case 404:
-          return .notFound
-      case 409:
-          return .mailExist
-      default:
-          return .unknownError
-      }
+    switch errorCode {
+    case 401:
+      return .invalidCredentials
+    case 404:
+      return .notFound
+    case 409:
+      return .mailExist
+    default:
+      return .unknownError
+    }
   }
 }

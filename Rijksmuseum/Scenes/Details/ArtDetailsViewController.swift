@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import Nuke
 
 class ArtDetailsViewController: UIViewController {
   
@@ -43,6 +42,7 @@ class ArtDetailsViewController: UIViewController {
     super.viewDidLoad()
 
     setupUI()
+    makeSubviewsLayout()
     setupBindings()
   }
   
@@ -50,7 +50,9 @@ class ArtDetailsViewController: UIViewController {
     view.addSubview(imageView)
     imageView.addSubview(titleLabel)
     imageView.addSubview(messageLabel)
-    
+  }
+  
+  private func makeSubviewsLayout() {
     imageView.snp.makeConstraints({
       $0.edges.equalToSuperview()
     })
@@ -58,7 +60,6 @@ class ArtDetailsViewController: UIViewController {
       $0.leading.equalToSuperview().offset(16)
       $0.trailing.equalToSuperview().inset(16)
     })
-    
     messageLabel.snp.makeConstraints({ [weak titleLabel] in
       guard let titleLabel = titleLabel else { return }
       $0.top.equalTo(titleLabel.snp.bottom).offset(16)
@@ -72,32 +73,16 @@ class ArtDetailsViewController: UIViewController {
     guard let viewModel = self.viewModel else {
       return
     }
-    let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear))
-      .mapToVoid()
-      .asDriverOnErrorJustComplete()
     
-    let input = ArtDetailsViewModel.Input(
-      trigger: viewWillAppear
-    )
+    let input = ArtDetailsViewModel.Input()
     let output = viewModel.transform(input: input)
     
     [
-      output.title.drive(onNext: { [weak self] (value) in
-        self?.titleLabel.text = value
-      }),
-      output.message.drive(onNext: { [weak self] (value) in
-        self?.messageLabel.text = value
-      }),
-      output.imageUrl.drive(onNext: { [weak self] (value) in
-        guard let imageView = self?.imageView, let url = value, let options = self?.makeImageLoadingOptions() else {return}
-        Nuke.loadImage(with: url, options: options, into: imageView)
-      }),
+      output.title.drive(titleLabel.rx.text),
+      output.message.drive(messageLabel.rx.text),
+      output.image.drive(imageView.rx.image),
       output.error.drive(errorBinding)
     ]
     .forEach({$0.disposed(by: disposeBag)})
-  }
-  
-  func makeImageLoadingOptions() -> ImageLoadingOptions {
-    return ImageLoadingOptions(placeholder:UIImage(named: "photo"), transition: .fadeIn(duration: 0.25))
   }
 }

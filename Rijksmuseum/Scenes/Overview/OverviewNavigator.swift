@@ -9,8 +9,8 @@ import UIKit
 import RxSwift
 
 protocol OverviewNavigatorProtocol {
-    func toOverview()
-    func toArtDetails(_ art: ArtObjectModel)
+  func toOverview()
+  func toArtDetails(_ art: ArtObjectModel)
 }
 
 class OverviewNavigator: OverviewNavigatorProtocol {

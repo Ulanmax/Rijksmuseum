@@ -8,7 +8,7 @@
 import RxSwift
 
 protocol CollectionNetworkProtocol : class {
-    func getArts(page: Int, pageSize: Int) -> Observable<[ArtObjectModel]>
+  func getArts(page: Int, pageSize: Int) -> Observable<[ArtObjectModel]>
 }
 
 public final class CollectionNetwork: CollectionNetworkProtocol {

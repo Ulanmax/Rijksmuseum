@@ -36,12 +36,12 @@ final class Network<T: Codable> {
     allParams["key"] = Constants.apiKey
     let absolutePath = "\(endPoint)/\(path)"
     return RxAlamofire
-        .data(.get, absolutePath, parameters: allParams, headers: headers)
-        .debug()
-        .observeOn(scheduler)
-        .map({ data -> Type in
-          return try JSONDecoder().decode(Type.self, from: data)
-        })
+      .data(.get, absolutePath, parameters: allParams, headers: headers)
+      .debug()
+      .observeOn(scheduler)
+      .map({ data -> Type in
+        return try JSONDecoder().decode(Type.self, from: data)
+      })
   }
 
 }

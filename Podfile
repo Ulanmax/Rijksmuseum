@@ -34,8 +34,4 @@ target 'Rijksmuseum' do
     pod 'RxTest'
   end
 
-  target 'RijksmuseumUITests' do
-    # Pods for testing
-  end
-
 end
